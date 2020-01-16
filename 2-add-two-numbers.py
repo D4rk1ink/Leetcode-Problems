@@ -1,4 +1,5 @@
 #Submitted-1, wrong answer in case sum > 10
+#Submitted-2, 68ms, fix in case sum > 10
 
 class ListNode:
     def __init__(self, x):
@@ -21,7 +22,7 @@ class Solution:
             fraction = sum % 10
             add = int(sum / 10)
             nextNode = self.link(nextNode, ListNode(fraction))
-            if l1.next or l2.next:
+            if l1.next or l2.next or add > 0:
                 l1 = l1.next or ListNode(0)
                 l2 = l2.next or ListNode(0)  
             else:
